@@ -1,3 +1,13 @@
+import os
+import gdown
+
+MODEL_PATH = "oral_efficientnet_b3_V2.keras"
+
+# Download model from Google Drive if not present
+if not os.path.exists(MODEL_PATH):
+    url = "https://drive.google.com/uc?id=1yMmRHXSETa8ATVOBzbnJfooyc8XSv30Y"
+    gdown.download(url, MODEL_PATH, quiet=False)
+
 
 import streamlit as st
 import tensorflow as tf
@@ -103,7 +113,7 @@ DISEASE_INFO = {
 def load_model():
     """Load the trained model"""
     try:
-        model = keras.models.load_model('oral_efficientnet_b3_V2.keras')
+        model = keras.models.load_model(MODEL_PATH)
         return model
     except Exception as e:
         st.error(f"Error loading model: {e}")
