@@ -239,16 +239,19 @@ with col2:
                     info = DISEASE_INFO[class_name]
                     
                     st.markdown(f"""
-                    <div class="confidence-box">
-                        <strong style="color: #000;">{class_name}</strong>
-                        <div style="background: #ddd; border-radius: 5px; margin-top: 0.5rem;">
-                            <div style="background: {info['color']}; width: {class_confidence}%; 
-                                        padding: 0.3rem; border-radius: 5px; text-align: center; color: #000; font-weight: bold;">
-                                {class_confidence:.2f}%
-                            </div>
-                        </div>
-                    </div>
-                    """, unsafe_allow_html=True)
+<div class="confidence-box">
+    <strong>{class_name}</strong>
+    <div style="background: #ddd; border-radius: 5px; margin-top: 0.5rem; height: 18px;">
+        <div style="background: {info['color']}; width: {class_confidence}%; 
+                    height: 100%; border-radius: 5px;">
+        </div>
+    </div>
+    <div style="margin-top: 0.3rem; font-weight: bold; color: #000;">
+        Confidence: {class_confidence:.2f}%
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
                 
                 # Warning message
                 st.warning("**Disclaimer:** This is an AI-based diagnostic tool and should not replace professional medical advice. Please consult a dentist for proper diagnosis and treatment.")
