@@ -1,0 +1,3 @@
+*.keras
+prepared_data/
+__pycache__/
