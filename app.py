@@ -102,7 +102,7 @@ DISEASE_INFO = {
 def load_model():
     """Load the trained model"""
     try:
-        model = keras.models.load_model('oral_efficientnet_b3_V2.keras')
+        model = tf.keras.models.load_model("oral_efficientnet_b3_v2.keras")
         return model
     except Exception as e:
         st.error(f"Error loading model: {e}")

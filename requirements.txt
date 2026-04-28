@@ -2,7 +2,10 @@ streamlit
 tensorflow-cpu==2.12.0
 numpy==1.23.5
 pillow
-matplotlib
 pandas
+matplotlib
 reportlab
 gdown
+opencv-python-headless
+scikit-learn
+h5py
